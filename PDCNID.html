@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECTION B (1)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .pdc {
+      color: blue;
+    }
+    .nid {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <ul id="numberList"></ul>
+
+  <script>
+    displayOutput();
+    
+
+    function displayOutput() {
+      var numberList = document.getElementById("numberList");
+      var Output;
+
+      for (var i = 1; i <= 100; i++) {
+        Output = document.createElement("li");
+
+        if (i % 3 === 0) {
+          Output.textContent = i + " - PDC";
+          Output.className = "pdc";
+        } else if (i % 5 === 0) {
+          Output.textContent = i + " - NID";
+          Output.className = "nid";
+        } else {
+          Output.textContent = i + " - Neither PDC nor NID";
+        }
+        numberList.appendChild(Output);
+      }
+    }
+    console.log()
+  </script>
+</body>
+</html>

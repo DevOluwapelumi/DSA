@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+    <style>
+        h1 {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#word-input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#result {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+    </style>
+<body>
+  <h1>Palindrome Checker</h1>
+  <div class="input-container">
+    <input type="text" id="word-input" class="form-control" placeholder="Enter a word">
+    <button class="btn btn-info" onclick="checkPalindrome()">Check</button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    function checkPalindrome() {
+  var word = document.getElementById("word-input").value;
+  var reversedWord = word.split("").reverse().join("");
+  var resultElement = document.getElementById("result");
+
+  if (word === reversedWord) {
+    resultElement.textContent = "'" + word + "' is a palindrome.";
+  } else {
+    resultElement.textContent = "'" + word + "' is not a palindrome.";
+  }
+}
+  </script>
+</body>
+</html>

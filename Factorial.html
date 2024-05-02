@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECTION B (2)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        input {
+            padding: 5px;
+            width: 100px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Factorial Calculator</h1>
+    <form>
+        <input type="number" id="numberInput" placeholder="Input a number" class="form-control" required>
+        <button class="btn btn-info" type="button" onclick="calculateFactorial()">Calculate Factorial</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function factorial(num) {
+            let result = 1;
+            for (let i = num; i >= 1; i--) {
+                result *= i;
+            }
+            return result;
+        }
+
+        function calculateFactorial() {
+            const numberInput = document.getElementById('numberInput');
+            const resultElement = document.getElementById('result');
+            const num = parseInt(numberInput.value);
+
+            if (isNaN(num)) {
+                resultElement.textContent = 'Please enter a valid number.';
+            } else {
+                const factorialResult = factorial(num);
+                resultElement.textContent = `Factorial of ${num} is ${factorialResult}.`;
+            }
+        }
+    </script>
+</body>
+</html>
